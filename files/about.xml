@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <id>https://blogs.radio</id>
+  <title>About blogs.radio</title>
+  <updated>2023-09-01T13:27:53.378221+00:00</updated>
+  <author>
+    <name>dk1mi</name>
+    <email>hidden</email>
+  </author>
+  <generator uri="https://lkiesow.github.io/python-feedgen" version="0.9.0">python-feedgen</generator>
+  <subtitle></subtitle>
+  <entry>
+    <id>https://dk1mi.radio/blogs-radio/</id>
+    <title>About blogs.radio</title>
+    <updated>2023-09-01T00:00:00+00:00</updated>
+    <author>
+      <name>dk1mi</name>
+      <email>hidden</email>
+    </author>
+    <content type="html">&lt;h1&gt;About&lt;/h1&gt;
+
+&lt;p&gt;This FreshRSS installation collects all RSS feeds of amateur radio blogs that I know of and then displays them here.&lt;/p&gt;
+
+&lt;p&gt;The following goals should be achieved with it:&lt;/p&gt;
+
+&lt;ul&gt;
+	&lt;li&gt;Promotion of our hobby&lt;/li&gt;
+	&lt;li&gt;Making less known amateur radio websites visible&lt;/li&gt;
+	&lt;li&gt;To provide a central place to get the latest news about amateur radio&lt;/li&gt;
+	&lt;li&gt;Making all these blogs centrally searchable (based on the RSS feeds)&lt;/li&gt;
+	&lt;li&gt;Making RSS great again&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have made the RSS feeds on which this service is based available in the form of an OPML file: &lt;a href=&quot;https://codeberg.org/mclemens/Ham-Radio-RSS-Feeds&quot;&gt;https://codeberg.org/mclemens/Ham-Radio-RSS-Feeds&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;If you want to use your own RSS reader, but still want to enjoy centrally maintained feeds, you can also simply specify the OPML file from my Git repository as a dynamic source within your RSS reader. This is supported by FreshRSS among others.&lt;/p&gt;
+
+&lt;p&gt;If feeds have inappropriate content, great feeds are missing or you want to share something else, please &lt;a href=&quot;https://dk1mi.radio/about&quot;&gt;contact me (DK1MI)&lt;/a&gt;.&lt;/p&gt;</content>
+    <link href="https://dk1mi.radio/" rel="alternate"/>
+    <published>2023-09-01T00:00:00+00:00</published>
+  </entry>
+</feed>
