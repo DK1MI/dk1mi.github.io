@@ -32,7 +32,7 @@ You can either change the frequency in WebSDR and the transceiver will synchroni
 
 Another feature allows you to send the synchronized data to a Cloudlog/Wavelog instance via its API, so you can log the QSO there easily and conveniently.
 
-![](/img/websdr-radio-sync-01.jpg)
+![](/img/websdr-radio-sync-01.png)
 
 I'm currently still waiting for this Chrome extension to be approved and published in the Chrome Web Store.
 If you'd like to try out the tool right now, you can download it and install it in Chrome.
