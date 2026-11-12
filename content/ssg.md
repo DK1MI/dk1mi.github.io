@@ -1,5 +1,5 @@
 ---
-title: Back to a SSG - but this time my own
+title: Back to an SSG - but this time my own
 date: 2026-11-12
 ---
 
