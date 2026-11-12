@@ -3,6 +3,8 @@
 Source of [rz01.org](https://rz01.org). The pages are generated from Markdown by `ssg.py`
 (Python 3, standard library only).
 
+More info: [rz01.org/ssg/](https://rz01.org/ssg)
+
 ## Writing a post
 
 Create `content/<slug>.md` — the file name becomes the URL (`/<slug>/`):
