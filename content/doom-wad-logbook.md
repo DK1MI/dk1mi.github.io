@@ -2280,5 +2280,16 @@ The following table lists all WADs in the order in which I have played them and 
 <td>Stopped playing in map05 when the game became to unfair.</td>
 <td>**</td>
 </tr>
+<tr>
+<td>206</td>
+<td><a href="https://doomwiki.org/wiki/Dominus_Diabolicus">Dominus Diabolicus</a></td>
+<td>II</td>
+<td>MBF21</td>
+<td>2024</td>
+<td>33</td>
+<td>0</td>
+<td>Played until map15, stopped already being fun at around map10. I don't enjoy dying every minute.</td>
+<td>***</td>
+</tr>
 </tbody>
 </table>
