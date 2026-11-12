@@ -38,6 +38,6 @@ date: 2026-11-12
 
 What it deliberately doesn't do: there are no tags, categories, pagination, drafts, plugins or themes, and no local preview server.
 
-So far, it works great and makes things super easy. It feels good to be independant from the dev team of an SSG that might change features in the future or depricate ones I like.
+So far, it works great and makes things super easy. It feels good to be independent from the dev team of an SSG that might change features in the future or deprecate ones I like.
 
 The source of this website and the SSG can be found here: [https://github.com/DK1MI/dk1mi.github.io](https://github.com/DK1MI/dk1mi.github.io).
