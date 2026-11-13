@@ -19,7 +19,7 @@ That’s why it was time to build something custom. The result of this project w
 - **Web UI**: manage hosts, cron schedules, live logs with a progress bar (files checked, data transferred, speed, time left), run history and a snapshot browser with file and `.tar.gz` downloads.
 - **Encrypted offsite copy**: restic uploads the latest snapshot of every host to S3, B2, SFTP, a rest-server, etc., with its own retention policy and a restore option.
 
-This solution, which is very easy to deploy using Docker, looks like this:
+This solution, which is very easy to deploy using Docker, looks like this (Please note: All images are in greyscale on this website. For the color version, please have a look at the github repo below):
 
 ### Overview of all configured hosts
 
