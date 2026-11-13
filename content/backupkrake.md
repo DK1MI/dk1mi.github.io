@@ -21,19 +21,19 @@ That’s why it was time to build something custom. The result of this project w
 
 This solution, which is very easy to deploy using Docker, looks like this:
 
-Overview of all configured hosts:
+### Overview of all configured hosts
 
 ![](/img/backupkrake-01.png)
 
-Monitoring of an active backup run:
+### Monitoring of an active backup run
 
 ![](/img/backupkrake-02.png)
 
-Detail view of one host and its executed runs:
+### Detail view of one host and its executed runs
 
 ![](/img/backupkrake-03.png)
 
-Overview of all runs so far:
+### Overview of all runs so far
 
 ![](/img/backupkrake-04.png)
 
