@@ -1,5 +1,5 @@
 ---
-title: My own custom backup solution: backupkrake
+title: My own custom backup solution: Backupkrake
 date: 2026-11-13 12:00
 ---
 
@@ -7,7 +7,7 @@ So far, I’ve tried out a lot of different ways to back up data at home and on 
 Synology’s backup solution (back when I still had one of their NAS devices), Nextcloud, Seafile, and many more. None of these were satisfactory because 
 the solution was either proprietary, couldn’t be monitored centrally, or was being used for a purpose other than its intended one. 
 
-That’s why it was time to build something custom. The result of this project was a central backup solution called backupkrake. It can do the following:
+That’s why it was time to build something custom. The result of this project was a central backup solution called Backupkrake. It can do the following:
 
 - **Pull over SSH**: the server connects to each client as `root` and copies files with `rsync`. Clients need only `rsync` and the server's public key, no agent.
 - **Non-root hosts**: back up just your home folder on systems where you only have a normal account (e.g. shared Unix systems), with a key locked to that folder.
