@@ -23,19 +23,19 @@ This solution, which is very easy to deploy using Docker, looks like this:
 
 Overview of all configured hosts:
 
-![](img/backupkrake-01.png)
+![](/img/backupkrake-01.png)
 
 Monitoring of an active backup run:
 
-![](img/backupkrake-02.png)
+![](/img/backupkrake-02.png)
 
 Detail view of one host and its executed runs:
 
-![](img/backupkrake-03.png)
+![](/img/backupkrake-03.png)
 
 Overview of all runs so far:
 
-![](img/backupkrake-04.png)
+![](/img/backupkrake-04.png)
 
 The project is still in its early stages, but I haven't encountered any problems so far. The backups run reliably, 
 I have all my data available in unencrypted form, can restore it or easily download it via the web interface, 
