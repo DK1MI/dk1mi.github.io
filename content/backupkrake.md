@@ -21,21 +21,7 @@ That’s why it was time to build something custom. The result of this project w
 
 This solution, which is very easy to deploy using Docker, looks like this (Please note: All images are in greyscale on this website. For the color version, please have a look at the github repo below):
 
-### Overview of all configured hosts
-
-![](/img/backupkrake-01.png)
-
-### Monitoring of an active backup run
-
-![](/img/backupkrake-02.png)
-
-### Detail view of one host and its executed runs
-
-![](/img/backupkrake-03.png)
-
-### Overview of all runs so far
-
-![](/img/backupkrake-04.png)
+![](/img/backupkrake-01.jpg)
 
 The project is still in its early stages, but I haven't encountered any problems so far. The backups run reliably, 
 I have all my data available in unencrypted form, can restore it or easily download it via the web interface, 
