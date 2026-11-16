@@ -6,7 +6,7 @@ summary: I have long suffered from extreme interference at my home QTH, to the p
 
 ### Updates
 
-**2026-11-16:** This extension is now available in the Chrome Web Store. To install it, simply click here, then click on "Add to Chrome".
+**2026-11-16:** This extension is now available in the Chrome Web Store. To install it, simply [click here](https://chromewebstore.google.com/detail/web-sdr-%E2%86%92-radio-sync/ijdhjmmjgenlhgceppmhopmajkjigfhh), then click on "Add to Chrome".
 
 **2026-11-09:** I've added a list with POTA, SOTA, WWFF etc. spots with band, mode and programme filters. You can click on a spot and the SDR and radio jump to it.
 Furthermore, you can log the contact in Cloudlog/Wavelog with another click on the "Log" button.
