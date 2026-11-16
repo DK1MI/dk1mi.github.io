@@ -4,7 +4,7 @@ date: 2026-11-16 16:00
 ---
 
 I mainly play Doom to relax. That’s why I skip a lot of WADs that are actually very good but are too extreme in some ways. 
-I have no problem with boss fights—against Cyberdemons, for example. 
+I have no problem with boss fights like against Cyberdemons. 
 But what really annoys me is having to fight ten Revenants and two Arch-viles in a very confined space. In fact, there are four monsters in total that annoy me:
 
 * [Arch-viles](https://doomwiki.org/wiki/Arch-vile)
