@@ -47,6 +47,7 @@ Because I don’t care much about phones.
 This website
 
 - is free of cookies
+- is free of JavaScript
 - is 100% non-commercial, ad-free and free of referral links
 - is providing information that has been compiled by a human being with the aim of passing it on to other human beings
 - is not there to satisfy any greed
