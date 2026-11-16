@@ -1,6 +1,6 @@
 ---
-title: COZYDOOM.WAD - a monster replacement WAD foe Doom II
-date: 2026-11-16
+title: COZYDOOM.WAD - a monster replacement WAD for Doom II
+date: 2026-11-16 16:00
 ---
 
 I mainly play Doom to relax. That’s why I skip a lot of WADs that are actually very good but are too extreme in some ways. 
