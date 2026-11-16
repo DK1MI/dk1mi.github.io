@@ -1,5 +1,5 @@
 ---
-title: COZYDOOM.WAD - a DOOM II monster replacement WAD
+title: COZYDOOM.WAD
 date: 2026-11-16 16:00
 ---
 
