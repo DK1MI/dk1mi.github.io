@@ -2291,5 +2291,16 @@ The following table lists all WADs in the order in which I have played them and 
 <td>Played until map15, stopped already being fun at around map10. I don't enjoy dying every minute.</td>
 <td>***</td>
 </tr>
+<tr>
+<td>207</td>
+<td><a href="https://doomwiki.org/wiki/Headless_Chicken">Headless Chicken</a></td>
+<td>II</td>
+<td>Boom</td>
+<td>2023</td>
+<td>33</td>
+<td>0</td>
+<td>Same story as so many times before: Started out very nice, beautiful textures, great levels but got too extreme from episode 2 on.</td>
+<td>***</td>
+</tr>
 </tbody>
 </table>
