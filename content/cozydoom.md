@@ -1,0 +1,22 @@
+---
+title: COZYDOOM.WAD - a monster replacement WAD foe Doom II
+date: 2026-11-16
+---
+
+I mainly play Doom to relax. That’s why I skip a lot of WADs that are actually very good but are too extreme in some ways. 
+I have no problem with boss fights—against Cyberdemons, for example. 
+But what really annoys me is having to fight ten Revenants and two Arch-viles in a very confined space. In fact, there are four monsters in total that annoy me:
+
+* [Arch-viles](https://doomwiki.org/wiki/Arch-vile)
+* [Revenants](https://doomwiki.org/wiki/Revenant)
+* [Pain Elementals](https://doomwiki.org/wiki/Pain_elemental)
+* [Lost Souls](https://doomwiki.org/wiki/Lost_soul)
+
+Instead of avoiding these WADs altogether, I’ve created a WAD that replaces or completely removes these four monsters:
+
+* [Arch-viles](https://doomwiki.org/wiki/Arch-vile) are replaced by [Imps](https://doomwiki.org/wiki/Imp)
+* [Revenants](https://doomwiki.org/wiki/Revenant) are replaced by [Imps](https://doomwiki.org/wiki/Imp)
+* [Pain Elementals](https://doomwiki.org/wiki/Pain_elemental) are replaced by [Cacodemons](https://doomwiki.org/wiki/Cacodemon)
+* [Lost Souls](https://doomwiki.org/wiki/Lost_soul) are removed
+
+Call me lame, but I’d rather play this way than not at all. If you feel the same way, you can download the WAD right here from my server: [COZYDOOM.WAD](/files/COZYDOOM.WAD)
