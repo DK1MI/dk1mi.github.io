@@ -8,6 +8,8 @@ This page serves me to record which [Doom](/playing-doom-in-2024/) [WAD](https:/
 
 It’s worth mentioning that I’m a casual player with a mediocre skill level. I started playing a few MegaWADs and was very enthusiastic at the beginning, but the game became so difficult towards the end that I lost interest and quit. I play to relax, I have enough challenges in real life. I also like simple oldschool maps. If the flow is right, I have fun with a WAD.
 
+Please note that from entry 208 on, I was/am using [COZYDOOM.WAD](/cozydoom/) if things become too crazy. This means that my verdict is not necessarily valid for the original WAD.  
+
 The following table lists all WADs in the order in which I have played them and describes whether I have played through the WAD and if not, why.
 
 <table>
@@ -2301,6 +2303,17 @@ The following table lists all WADs in the order in which I have played them and 
 <td>0</td>
 <td>Same story as so many times before: Started out very nice, beautiful textures, great levels but got too extreme from episode 2 on.</td>
 <td>***</td>
+</tr>
+<tr>
+<td>208</td>
+<td><a href="https://doomwiki.org/wiki/Reconditus">Reconditus</a></td>
+<td>II</td>
+<td>Boom</td>
+<td>2024</td>
+<td>4</td>
+<td>0</td>
+<td>Lots of eyecandy, nice maps, solid amount of resources.</td>
+<td>****</td>
 </tr>
 </tbody>
 </table>
