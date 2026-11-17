@@ -2311,7 +2311,7 @@ The following table lists all WADs in the order in which I have played them and 
 <td>Boom</td>
 <td>2024</td>
 <td>4</td>
-<td>0</td>
+<td>1</td>
 <td>Lots of eyecandy, nice maps, solid amount of resources.</td>
 <td>****</td>
 </tr>
