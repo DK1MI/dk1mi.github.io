@@ -7,7 +7,9 @@ Usage:  python3 ssg.py
 Reads   content/*.md      one Markdown file per page, output to /<slug>/index.html
         content/_index.md  intro text of the home page
         layout.html        the HTML shell shared by all pages
-        static/            copied unchanged (img/, files/, style.css, favicons, ...)
+        static/            copied unchanged (img/, files/, style.css, favicons, ...);
+                           before that, EXIF data is removed from its images
+                           in place (JPEG, PNG, WebP; see "EXIF removal")
 Writes  output/            the complete website: the static files plus
                            <slug>/index.html, index.html (intro + list of posts)
                            and index.xml (RSS)
@@ -413,6 +415,153 @@ def _plain(s):
     return html.unescape(re.sub(r"<[^>]+>", "", render_inline(s)))
 
 
+# ----------------------------------------------------------- EXIF removal ---
+#
+# Photos often carry EXIF metadata (GPS position, camera serial number, date).
+# Before every build, all images in static/ are checked and their EXIF data is
+# removed in place, so it never ends up in output/ or in the repository.
+# Images are recognised by their content (not their file name) and edited at
+# the byte level, so pixels and quality are untouched (no re-encoding).
+# Supported: JPEG (APP1 "Exif" segments), PNG (eXIf chunks and ImageMagick's
+# "Raw profile type exif" text chunks) and WebP (EXIF chunks).
+# The only thing kept is the orientation tag of rotated photos (in a minimal
+# EXIF block with nothing else in it), as browsers need it to show them upright.
+
+def _exif_orientation(tiff):
+    """Orientation tag (1-8) from a TIFF-structured EXIF block, 1 if missing."""
+    try:
+        order = {b"II": "little", b"MM": "big"}[tiff[:2]]
+        ifd = int.from_bytes(tiff[4:8], order)
+        for k in range(int.from_bytes(tiff[ifd:ifd + 2], order)):
+            e = ifd + 2 + 12 * k
+            if int.from_bytes(tiff[e:e + 2], order) == 0x0112:
+                value = int.from_bytes(tiff[e + 8:e + 10], order)
+                return value if 1 <= value <= 8 else 1
+    except (KeyError, ValueError):
+        pass
+    return 1
+
+
+def _minimal_exif(orientation):
+    """A TIFF-structured EXIF block containing only the orientation tag."""
+    return (b"MM\x00\x2a" + (8).to_bytes(4, "big") + (1).to_bytes(2, "big")
+            + bytes.fromhex("011200030000 0001") + orientation.to_bytes(2, "big")
+            + bytes(2) + bytes(4))
+
+
+def _clean_exif(tiff):
+    """Replacement for an EXIF block: None to drop it, or the minimal block."""
+    orientation = _exif_orientation(tiff)
+    return _minimal_exif(orientation) if orientation != 1 else None
+
+
+def _strip_jpeg(data):
+    out, i = [data[:2]], 2
+    while i + 4 <= len(data):
+        if data[i] != 0xFF:
+            return None  # not a well-formed JPEG: leave it alone
+        marker = data[i + 1]
+        if marker == 0xFF:  # fill byte
+            out.append(data[i:i + 1])
+            i += 1
+            continue
+        if marker in (0x01, *range(0xD0, 0xD8)):  # markers without payload
+            out.append(data[i:i + 2])
+            i += 2
+            continue
+        if marker in (0xDA, 0xD9):  # start of scan / end of image: rest is image data
+            break
+        end = i + 2 + int.from_bytes(data[i + 2:i + 4], "big")
+        segment = data[i:end]
+        if marker == 0xE1 and segment[4:10] == b"Exif\x00\x00":
+            tiff = _clean_exif(segment[10:])
+            if tiff is not None:
+                payload = b"Exif\x00\x00" + tiff
+                segment = b"\xff\xe1" + (len(payload) + 2).to_bytes(2, "big") + payload
+            else:
+                segment = b""
+        out.append(segment)
+        i = end
+    out.append(data[i:])
+    return b"".join(out)
+
+
+def _strip_png(data):
+    import zlib
+    out, i = [data[:8]], 8
+    while i + 12 <= len(data):
+        length = int.from_bytes(data[i:i + 4], "big")
+        kind = data[i + 4:i + 8]
+        chunk_data = data[i + 8:i + 8 + length]
+        chunk = data[i:i + 12 + length]
+        if kind == b"eXIf":
+            tiff = _clean_exif(chunk_data)
+            chunk = b"" if tiff is None else (
+                len(tiff).to_bytes(4, "big") + kind + tiff
+                + zlib.crc32(kind + tiff).to_bytes(4, "big"))
+        elif kind in (b"tEXt", b"zTXt", b"iTXt") and chunk_data.split(b"\x00", 1)[0].lower() in (
+                b"raw profile type exif", b"raw profile type app1"):
+            chunk = b""
+        out.append(chunk)
+        i += 12 + length
+        if kind == b"IEND":
+            break
+    out.append(data[i:])
+    return b"".join(out)
+
+
+def _strip_webp(data):
+    out, i, vp8x = [], 12, None
+    while i + 8 <= len(data):
+        kind = data[i:i + 4]
+        size = int.from_bytes(data[i + 4:i + 8], "little")
+        chunk = data[i:i + 8 + size + (size & 1)]
+        if kind == b"EXIF":
+            payload = chunk[8:8 + size]
+            prefix = b"Exif\x00\x00" if payload.startswith(b"Exif\x00\x00") else b""
+            tiff = _clean_exif(payload[len(prefix):])
+            if tiff is None:
+                chunk = b""
+            else:
+                payload = prefix + tiff
+                chunk = b"EXIF" + len(payload).to_bytes(4, "little") + payload + bytes(len(payload) & 1)
+        elif kind == b"VP8X":
+            vp8x = len(out)
+        out.append(chunk)
+        i += 8 + size + (size & 1)
+    if vp8x is not None and not any(c[:4] == b"EXIF" for c in out):
+        c = out[vp8x]
+        out[vp8x] = c[:8] + bytes([c[8] & ~0x08]) + c[9:]  # clear the "has EXIF" flag
+    body = b"WEBP" + b"".join(out) + data[i:]
+    return b"RIFF" + len(body).to_bytes(4, "little") + body
+
+
+def strip_exif(path):
+    """Remove EXIF data from an image file in place. Returns True if it changed."""
+    data = path.read_bytes()
+    if data.startswith(b"\xff\xd8\xff"):
+        new = _strip_jpeg(data)
+    elif data.startswith(b"\x89PNG\r\n\x1a\n"):
+        new = _strip_png(data)
+    elif data[:4] == b"RIFF" and data[8:12] == b"WEBP":
+        new = _strip_webp(data)
+    else:
+        return False  # not an image (or a format without EXIF)
+    if new is None or new == data:
+        return False
+    tmp = path.with_name(path.name + ".exif-tmp")
+    tmp.write_bytes(new)
+    tmp.replace(path)
+    return True
+
+
+def strip_exif_in_static():
+    stripped = [p for p in sorted(STATIC.rglob("*")) if p.is_file() and strip_exif(p)]
+    for p in stripped:
+        print(f"removed EXIF data from {p.relative_to(ROOT)}")
+    return len(stripped)
+
+
 # ------------------------------------------------------------------ site ---
 
 class Page:
@@ -553,6 +702,7 @@ def main():
     if OUTPUT.exists():
         shutil.rmtree(OUTPUT)
     if STATIC.exists():
+        strip_exif_in_static()
         shutil.copytree(STATIC, OUTPUT)
     OUTPUT.mkdir(exist_ok=True)
 
