@@ -28,8 +28,8 @@ Then run:
 python3 ssg.py
 ```
 
-This rebuilds the complete website in `output/`: it deletes `output/`, copies everything
-from `static/` into it and writes `<slug>/index.html` for every Markdown file, the home page
+This rebuilds the complete website in `output/`: it deletes `output/`, removes EXIF data
+from the images in `static/` (see below), copies everything from `static/` into it and writes `<slug>/index.html` for every Markdown file, the home page
 `index.html` (intro from `content/_index.md` + list of all posts by year) and the RSS feed
 `index.xml`. `output/` is what gets deployed; never edit files in it by hand.
 
@@ -49,6 +49,23 @@ links, images, `<https://autolinks>`, bullet and numbered lists (nested by inden
 `>` blockquotes, `---` rules, fenced ```` ``` ```` code blocks, pipe tables. Raw HTML works
 too: blocks starting with an HTML block tag (`<table>`, `<figure>`, `<div>`, ...) are copied
 unchanged, inline tags like `<br>` or `<span>` are kept as they are.
+
+### EXIF removal
+
+Photos often carry EXIF metadata (GPS position, camera serial number, capture date). Before
+every build, `ssg.py` checks all files in `static/` and strips EXIF data from images **in
+place**, printing `removed EXIF data from static/...` for each file it changed.
+
+- Supported formats: JPEG (APP1 `Exif` segments), PNG (`eXIf` chunks and ImageMagick's
+  "Raw profile type exif" text chunks) and WebP (`EXIF` chunks). Images are recognised by
+  their content, not their file extension.
+- The files are edited at the byte level, so pixels and quality are untouched (no re-encoding).
+- Only the orientation tag of rotated photos is kept (in a minimal EXIF block with nothing
+  else in it), so browsers still show them upright.
+
+Because `static/` itself is modified, run `python3 ssg.py` locally after adding new images and
+commit the cleaned files — that way the metadata never ends up in the repository. (The GitHub
+Actions build strips it as well, so the published site is clean either way.)
 
 ## Layout
 
