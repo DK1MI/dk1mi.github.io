@@ -10,7 +10,7 @@ I was able to implement all three projects quickly and efficiently, and I’m ac
 
 * [My own SSG](/ssg/): This site is no longer written by hand in HTML or built with an off-the-shelf static site generator (SSG), but rather with an SSG tailored precisely to my needs. It has exactly the features I need and nothing more. It’s written in Python, has no dependencies, and, at 500 lines of code, is very manageable. I’m definitely capable of maintaining and customizing this software even without AI.
 * [Web SDR -> Radio Sync Chrome extension](/websdr-radio-sync/): This software doesn’t exist as is, at least not on Linux, and it solves a problem that had really been getting me down. With this extension, I can finally get back to shortwave radio and enjoy my hobby again. Without AI, I wouldn’t have been able to do that.
-* [Backupkrake](/backupkrake/): Here, too, I didn't find anything that met my requirements. I've always wanted a simple, centrally managed backup system that doesn't require clients, can perform encrypted remote backups, and so on. Could I have written this tool myself? No, definitely not. Maybe with a lot of time and effort, but I'm not willing to invest that.
+* [Backupkrake](/backupkrake-post/): Here, too, I didn't find anything that met my requirements. I've always wanted a simple, centrally managed backup system that doesn't require clients, can perform encrypted remote backups, and so on. Could I have written this tool myself? No, definitely not. Maybe with a lot of time and effort, but I'm not willing to invest that.
 
 So what has changed in my attitude toward this topic? Quite a bit, but not everything:
 

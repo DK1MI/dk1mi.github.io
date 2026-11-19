@@ -37,4 +37,4 @@ Screenshots:
 
 ![](/img/the-arduino-enabled-washing-machine-9.jpg)
 
-You can download the code here: [launduino.tar.gz](/files/launduino.tar.gz)
+You can download the code here: [launduino.tar.gz](/files/laundruino.tar.gz)
