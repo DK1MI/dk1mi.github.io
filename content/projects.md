@@ -35,7 +35,7 @@ Below is a list of selected software and hardware projects that I have worked on
 | ColorSpot | Command line DX cluster client with country, continent, LotW and needed-entity highlighting | [Post](/colorspot/) | [colorspot.tar.gz](/files/colorspot.tar.gz) |
 | Hardrock-50 Remote Display | Python API and physical remote display for the Hardrock-50 amplifier | [Post](/hardrock50-remote-display/) | [hr50-remote-display.tar.gz](/files/hr50-remote-display.tar.gz) |
 | qrzlogger | Command line application to log QSOs directly into the QRZ.com logbook | [Post](/qrzlogger/) | [qrzlogger.tar.gz](/files/qrzlogger.tar.gz) |
-| qrz.sh | Command line tool to query the QRZ.com callsign database | [Post](/qrz-sh/) | [qrz.sh.tar.gz](/files/qrz.shtar.gz) |
+| qrz.sh | Command line tool to query the QRZ.com callsign database | [Post](/qrz-sh/) | [qrz.sh.tar.gz](/files/qrz.sh.tar.gz) |
 | nsd-dyndns | Adds dynamic DNS functionality to the NSD authoritative name server | [Post](/dynamic-dns-for-nsd/) | [nsd-dyndns.tar.gz](/files/nsd-dyndns.tar.gz) |
 | esm2markdown | Converts McAfee SIEM correlation rule exports to Markdown documentation | [Post](/correlation-rule-documentation-generator-for-mcafee-siem/) | [esm2markdown.tar.gz](/files/esm2markdown.tar.gz) |
 | pass Patch | Patch for the pass password manager to show passwords hidden (red on red) via SSH | [Post](/patch-for-the-cli-password-manager-pass/) | in the post |

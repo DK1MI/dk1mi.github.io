@@ -3,7 +3,7 @@ title: What is M17? Why is it so great? And how do I get started?
 date: 2025-08-02
 ---
 
-I have recently [posted a lot about M17](/tags/m17/), and you may be wondering what it is all about, why I am so excited about it, and how you can get involved. Let’s start with what [M17](https://m17project.org/) is.
+I have recently posted a lot about M17, and you may be wondering what it is all about, why I am so excited about it, and how you can get involved. Let’s start with what [M17](https://m17project.org/) is.
 
 ## What is M17? {#what-is-m17}
 

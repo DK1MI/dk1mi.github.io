@@ -8,7 +8,7 @@ This page serves me to record which [Doom](/playing-doom-in-2024/) [WAD](https:/
 
 It’s worth mentioning that I’m a casual player with a mediocre skill level. I started playing a few MegaWADs and was very enthusiastic at the beginning, but the game became so difficult towards the end that I lost interest and quit. I play to relax, I have enough challenges in real life. I also like simple oldschool maps. If the flow is right, I have fun with a WAD.
 
-Please note that from entry 208 on, I was/am using [COZYDOOM.WAD](/cozydoom/) if things become too crazy. This means that my verdict is not necessarily valid for the original WAD.  
+Please note that from entry 208 on, I was/am using [COZYDOOM.WAD](/cozydoom-post/) if things become too crazy. This means that my verdict is not necessarily valid for the original WAD.  
 
 The following table lists all WADs in the order in which I have played them and describes whether I have played through the WAD and if not, why.
 

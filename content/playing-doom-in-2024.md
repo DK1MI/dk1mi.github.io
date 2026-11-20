@@ -136,7 +136,7 @@ Here is my recommended playing order for someone playing Doom the first time sin
 
 Welcome to the endless rabbit hole of Doom! You most likely won’t live long enough to play all available maps
 and total conversions. All WADs I’ve played and what I think about them can be found
-[here](/doom-wad-log/).
+[here](/doom-wad-logbook/).
 
 To play Doom with such a (mega)wad, simply add the name of the wad as an option when starting GZDoom:
 

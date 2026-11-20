@@ -3,7 +3,7 @@ title: Hardrock-50 Widget for Quisk
 date: 2024-02-27
 ---
 
-My [shortwave station](/station/) consists of a Hermes Lite 2 SDR transceiver, a [Hardrock-50 power amplifier](/building-the-hardrock50/) and the marvellous [SDR software Quisk by James Ahlstrom](https://james.ahlstrom.name/quisk/). Everything works perfectly, but unfortunately the Hardrock-50 is operated relatively blindly. A lot of important information, such as the output power, the VSWR, the selected band and the operating temperature are not available remotely. The only option you have is to read out the parameters via the Hardrock-50’s USB interface. [I have already tried to find a solution myself to do this remotely](/hardrock50-remote-display/), but I wasn’t really satisfied with it.
+My shortwave station consists of a Hermes Lite 2 SDR transceiver, a [Hardrock-50 power amplifier](/building-the-hardrock50/) and the marvellous [SDR software Quisk by James Ahlstrom](https://james.ahlstrom.name/quisk/). Everything works perfectly, but unfortunately the Hardrock-50 is operated relatively blindly. A lot of important information, such as the output power, the VSWR, the selected band and the operating temperature are not available remotely. The only option you have is to read out the parameters via the Hardrock-50’s USB interface. [I have already tried to find a solution myself to do this remotely](/hardrock50-remote-display/), but I wasn’t really satisfied with it.
 
 By chance I found the project [hrctl by Harald Klein on Github](https://github.com/haklein/hrctl). This essentially consists of the following Python scripts:
 

@@ -2,4 +2,4 @@ This website is dedicated to [amateur radio](/a-declaration-of-love-to-amateur-r
 
 **DISCLAIMER:** Reproduction of my own projects or those of others presented here is at your own risk! I am neither responsible for any damage to the equipment involved nor for any potential injuries. This is a hobby website, all content should only serve as a suggestion and not as a copy template. Think for yourself and scrutinize my actions.
 
-**Below are all my posts in chronological order:**
+Below are all my posts in chronological order. If you'd like to look at a list of my projects, please click here: [Projects](/projects).
