@@ -49,13 +49,13 @@ Second, I only had an output of 3.5W on 15m while all other bands performed much
 
 ## Test Results
 
-In the end, all tests went through without any issues. The serial console access to the QMX is brilliant and allows you to test the transceiver thoroughfully. What might be of interest for you is the power output per band that can be taken from the following table:
+In the end, all tests went through without any issues. The serial console access to the QMX is brilliant and allows you to test the transceiver thoroughfully. The following table shows the power output and efficiency per band with a receive current of 92mA:
 
-| Band | Output power | Current | DC input | Efficiency |
-|------|-------------:|--------:|---------:|-----------:|
-| 60m  | 10.3 W | 1252 mA | 15.02 W | 68.6 % |
-| 40m  | 9.7 W  | 1216 mA | 14.59 W | 66.5 % |
-| 30m  | 8.9 W  | 1116 mA | 13.39 W | 66.5 % |
-| 20m  | 11.9 W | 1650 mA | 19.80 W | 60.1 % |
-| 17m  | 9.7 W  | 1495 mA | 17.94 W | 54.1 % |
-| 15m  | 6.8 W  | 1161 mA | 13.93 W | 48.8 % |
+| Band | Output power | Total current | PA current | PA DC input | Overall efficiency | PA efficiency |
+|------|-------------:|--------------:|-----------:|------------:|-------------------:|--------------:|
+| 60m  | 10.3 W | 1252 mA | 1160 mA | 13.92 W | 68.6 % | 74.0 % |
+| 40m  | 9.7 W  | 1216 mA | 1124 mA | 13.49 W | 66.5 % | 71.9 % |
+| 30m  | 8.9 W  | 1116 mA | 1024 mA | 12.29 W | 66.5 % | 72.4 % |
+| 20m  | 11.9 W | 1650 mA | 1558 mA | 18.70 W | 60.1 % | 63.6 % |
+| 17m  | 9.7 W  | 1495 mA | 1403 mA | 16.84 W | 54.1 % | 57.6 % |
+| 15m  | 6.8 W  | 1161 mA | 1069 mA | 12.83 W | 48.8 % | 53.0 % |
