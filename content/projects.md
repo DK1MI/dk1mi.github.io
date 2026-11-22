@@ -15,6 +15,7 @@ Below is a list of selected software and hardware projects that I have worked on
 
 | Project | Description | Blog Post | Code / Download |
 |---|---|---|---|
+| 10W QMX Transceiver | Build of a QMX Transceiver with the PA0RDT 10W mod | [Post](/qmx-10w/) | - |
 | COZYDOOM.WAD | A Doom WAD that replaces monsters in Doom, plus a web based builder to create your own variant | [Post](/cozydoom-post/) | [WAD v1.1](/files/COZYDOOM_v1.1.WAD), [Builder](https://cozydoom.rz01.org) |
 | Backupkrake | Self-hosted, centrally monitored backup solution for my home and remote servers | [Post](/backupkrake-post/) | [GitHub](https://github.com/DK1MI/backupkrake) |
 | rz01.org SSG | Dependency-free static site generator in Python 3 that builds this website | [Post](/ssg/) | [GitHub](https://github.com/DK1MI/dk1mi.github.io) |
