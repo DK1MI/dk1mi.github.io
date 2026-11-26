@@ -1,6 +1,6 @@
 ---
 title: Backup up Mikrotik devices with Backupkrake
-date: 2026-11-16 12:00
+date: 2026-11-26 16:00
 ---
 
 [Backupkrake](https://backupkrake.rz01.org/) is my pull-based backup server: it connects via SSH to every
