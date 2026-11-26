@@ -20,7 +20,7 @@ You probably need to know two things about my network to understand this post:
 
 | Network | Subnet | Notes |
 |---|---|---|
-| LAN | `192.168.88.0/24` | Router `192.168.88.1`, **Pi-hole `192.168.88.39`** (same subnet!) |
+| LAN | `192.168.88.0/24` | Router `192.168.88.1`, Pi-hole `192.168.88.39` (same subnet!) |
 | Other internal networks (guest Wi-Fi, DMZ, ...) | e.g. `192.168.55.0/24` | Routed through the router, isolated from the LAN by firewall rules |
 
 The router's interface list `WAN` contains all internet-facing interfaces (PPPoE, the
