@@ -2315,5 +2315,16 @@ The following table lists all WADs in the order in which I have played them and 
 <td>Lots of eyecandy, nice maps, solid amount of resources.</td>
 <td>****</td>
 </tr>
+<tr>
+<td>209</td>
+<td><a href="https://doomwiki.org/wiki/Duality">Duality</a></td>
+<td>II</td>
+<td>MBF21</td>
+<td>2024</td>
+<td>5</td>
+<td>1</td>
+<td>Spectacular graphics/textures, interesting levels, loads of fun - at least with CozyDoom</td>
+<td>****</td>
+</tr>
 </tbody>
 </table>
