@@ -4,19 +4,19 @@ date: 2026-11-26
 ---
 
 Like many other people, I run a [Pi-hole](https://pi-hole.net/) server at home to filter out the ever-increasing amount of 
-junk (such as trackers and ads) from my network traffic. Unfortunately, however, there are some devices 
+junk (such as trackers and ads) from my network traffic. But sadly there are some devices 
 that ignore the DNS servers configured via DHCP and simply use their own. Examples include smart TVs, 
 streaming sticks, and some IoT devices.
 
-In this post I document how to make a MikroTik router running RouterOS 7 catch those queries and redirect
-them to the Pi-hole anyway, and how to fall back to a public resolver automatically if the
-Pi-hole goes down. I started out with just the firewall rules that force all devices to use Pi-hole
+In this post I document how to make a MikroTik router (running RouterOS 7) catch those queries and redirect
+them to the Pi-hole server anyway, and how to fall back to a public resolver automatically if the
+Pi-hole server dies. I started out with just the firewall rules that force all devices to use Pi-hole
 but then quickly realized that I basically have no internet access anymore as soon as the Pi-hole server
 is down.
 
 ## My network
 
-You need to know two things about my network to understand this post:
+You probably need to know two things about my network to understand this post:
 
 | Network | Subnet | Notes |
 |---|---|---|
@@ -26,7 +26,7 @@ You need to know two things about my network to understand this post:
 The router's interface list `WAN` contains all internet-facing interfaces (PPPoE, the
 physical WAN port, an LTE backup etc.).
 
-That the Pi-hole sits **in the same subnet as the LAN clients** is important for two things: once for
+That the Pi-hole sits in the same subnet as the LAN clients is important for two things: once for
 the redirect (hairpin NAT) and also for the failover implementation.
 
 ## Step 1: Point DHCP at the Pi-hole
@@ -37,8 +37,8 @@ set [find address=192.168.88.0/24] dns-server=192.168.88.39,192.168.88.1
 set [find address=192.168.55.0/24] dns-server=192.168.88.39
 ```
 
-The second LAN entry (the router itself) is for the failover (which I explained later). The router
-doesn't answer DNS itself: the redirect in step 2 sends those queries to the Pi-hole too.
+The second LAN entry (the router itself) is for the failover (which I explain later). The router
+doesn't answer DNS itself, the redirect in step 2 sends those queries to the Pi-hole too.
 
 Don't use a public resolver like `8.8.8.8` as the secondary DNS entry in DHCP. It looks harmless, because the
 router would redirect its port 53 queries to the Pi-hole as well. But it gives clients a known
@@ -62,15 +62,15 @@ add chain=dstnat action=dst-nat protocol=tcp dst-port=53 in-interface-list=!WAN 
 
 Any port 53 packet the router receives is rewritten to be redirected to Pi-hole. Connection
 tracking rewrites the reply's source back, so a client that asked `8.8.8.8` sees an answer
-"from `8.8.8.8`" and would therefore not try any dirty tricks....
+"from `8.8.8.8`" and would therefore hopefully not try any dirty tricks...
 
 - `src-address=!192.168.88.39`: the Pi-hole's **own** upstream queries must not be
   redirected back to itself.
 - `dst-address=!192.168.88.39`: queries that already go to the Pi-hole need no rewriting.
 - `in-interface-list=!WAN`: **don't skip this.** Without it, a DNS query from the internet
   to your public IP is redirected to the Pi-hole too. The default "drop all from WAN not
-  DSTNATed" firewall rule then lets it through, because it *was* dst-natted. That turns your
-  Pi-hole into an open resolver on the internet, ready for DNS amplification abuse. For the
+  DSTNATed" firewall rule then lets it through, because it *was* dst-natted. That could turn your
+  Pi-hole into an open resolver on the internet (depending on other factors). For the
   same reason, make sure *every* internet-facing interface really is in the `WAN` list.
 - UDP **and** TCP: DNS can fall back to TCP.
 
