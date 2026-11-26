@@ -55,9 +55,9 @@ pre {
 }
 
 code:not(pre > code) {
-	background-color: #aaa;
-	color: #0f0e0e;
-	padding: 0.1em 0.2em;
+	/*background-color: #aaa;*/
+	color: #FFF;
+	/*padding: 0.1em 0.2em;*/
 	font-size: 90%;
 }
 
